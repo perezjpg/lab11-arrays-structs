@@ -1,0 +1,46 @@
+CoRe Data Analyzer - Lab 11 prototype test cases
+
+Test 1 - Requested count 0, then 2
+Inputs: 0, then 2
+Expected: Rejects 0 and allows two observations to be entered.
+Observed: Printed "Enter a whole number from 1 to 3:" for 0, then accepted 2 and asked for Observation 1 and Observation 2.
+
+Test 2 - Display after entering the two records
+Inputs: 151, FL, Gadsden County, 22510, 15582, 6811, 69.58 and 46, PA, Montour County, 8023, 3364, 4574, 42.38; then option 1
+Expected: Two aligned rows, IDs 151 and 46 preserved, share with two decimals.
+Observed: Two aligned rows with IDs 151 and 46, shares 69.58 and 42.38, and "Observations displayed: 2".
+
+Test 3 - Display a second time
+Inputs: option 1 again
+Expected: Same table and same count; the fields are not requested again.
+Observed: The same two rows and "Observations displayed: 2"; no data prompts appeared.
+
+Test 4 - Negative vote count before the valid one
+Inputs: total votes -5, then 22510
+Expected: Asks again for that field.
+Observed: Printed "Enter a non-negative whole number for total votes:" and accepted 22510.
+
+Test 5 - Share 101 before the valid value
+Inputs: Democratic share 101, then 69.58
+Expected: Rejects the out-of-range percentage.
+Observed: Printed "Enter a number from 0 to 100 for Democratic share:" and accepted 69.58.
+
+Test 6 - Text in a numeric prompt, then a valid number
+Inputs: total votes abc, then -5, then 22510; menu option xyz
+Expected: Recovers the input stream and continues without an error loop.
+Observed: "abc" printed the total-votes error once and the program kept asking normally; "xyz" in the menu printed "Invalid option." once and the menu appeared again.
+
+Test 7 - Menu option 9
+Inputs: option 9
+Expected: Reports an invalid option in this partial prototype and keeps the records.
+Observed: Printed "Invalid option."; the next option 1 still displayed both rows and "Observations displayed: 2".
+
+Test 8 - Option 11
+Inputs: option 11
+Expected: Ends the program.
+Observed: Printed "Session ended." and the program ended with status 0.
+
+Additional run - One observation
+Inputs: count 1, record 151 FL Gadsden County 22510 15582 6811 69.58; option 1
+Expected: One row, not one hundred.
+Observed: One row for ID 151 and "Observations displayed: 1".

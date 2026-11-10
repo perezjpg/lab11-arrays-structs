@@ -1,0 +1,9 @@
+1. The declaration (prototype) of computeAdd is in mathOps.h, and its definition is in mathOps.cpp. main.cpp only calls it after including mathOps.h.
+
+2. After selecting Addition, main calls computeAdd. Inside computeAdd, getValues reads the two operands, the sum is calculated, displayResult shows the result, and pressAnyKey pauses until the user presses Enter. Then control returns to the menu loop in main.
+
+3. main.cpp only contains the calls; the definitions of computeAdd, getValues, displayResult and pressAnyKey are in mathOps.cpp and utils.cpp. The headers make the prototypes visible to the compiler, but the linker needs the compiled code of all three .cpp files to connect each call with its definition. Compiling only main.cpp would produce "undefined reference" linker errors.
+
+4. The include guard (#ifndef UTILS_H / #define UTILS_H / #endif) prevents the contents of utils.h from being processed more than once in the same compilation unit. If the header arrived twice, for example directly and through another header, its declarations would be repeated, which can cause redefinition errors.
+
+5. -std=c++17 selects the C++17 language standard. -Wall turns on a broad group of common warnings. -Wextra adds more warnings that -Wall does not include. -pedantic reports code that does not follow the selected standard, including compiler extensions. -o sets the name of the output executable. When the program has only one .cpp file, only the list of source files changes: it names one file instead of three, while the flags and -o stay the same.
