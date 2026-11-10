@@ -4,13 +4,13 @@
  * Lab: 11 - Arrays and Structs
  * Description: Declares the function that displays one observation as a row
  *              of the Data Frame table.
- * Due Date: [Date]
+ * Due Date: November 1, 2026
  */
 
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-#include "observation.h" // Makes Observation available as a parameter type
+#include "observation.h"
 
 void displayObservation(Observation observation); // Declares output for one record passed by value
 

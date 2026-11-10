@@ -4,12 +4,12 @@
  * Lab: 11 - Arrays and Structs
  * Description: Defines displayObservation, which prints the seven data fields
  *              of one observation as an aligned table row.
- * Due Date: [Date]
+ * Due Date: November 1, 2026
  */
 
-#include <iostream> // Provides cout and endl
-#include <iomanip> // Provides aligned fields and decimal formatting
-#include "display.h" // Checks the definition against its declared prototype
+#include <iostream>
+#include <iomanip>
+#include "display.h"
 using namespace std;
 
 void displayObservation(Observation observation) {
@@ -22,5 +22,5 @@ void displayObservation(Observation observation) {
          << setw(11) << observation.republicanVotes
          << fixed << setprecision(2) << observation.democraticShare; // Shows the share with two decimals
 
-    cout << endl; // Ends the row after all its fields have been displayed
+    cout << endl;
 }

@@ -4,22 +4,22 @@
  * Lab: 11 - Arrays and Structs
  * Description: Reads one warehouse dispatch record into a struct and passes a
  *              copy of the complete record to a function that shows its summary.
- * Due Date: [Date]
+ * Due Date: November 1, 2026
  */
 
-#include <iostream> // Provides console input and output
-#include <string> // Provides string and getline
+#include <iostream>
+#include <string>
 using namespace std;
 
 struct DispatchRecord {
-    string destination; // Stores the shipment destination
-    int boxCount = 0; // Initializes the number of boxes
+    string destination;
+    int boxCount = 0;
 };
 
-void displayDispatch(DispatchRecord record); // Declares a function that receives one record
+void displayDispatch(DispatchRecord record);
 
 int main() {
-    DispatchRecord shipment = {}; // Creates one initialized record
+    DispatchRecord shipment = {};
     cout << "Enter shipment destination: ";
     getline(cin, shipment.destination); // Reads a destination that may include spaces
     cout << "Enter number of boxes: ";
@@ -38,7 +38,7 @@ int main() {
 void displayDispatch(DispatchRecord record) {
     cout << "Dispatch summary" << endl;
     cout << "Destination: " << record.destination << endl;
-    cout << "Boxes: " << record.boxCount << endl; // Displays a member from the local record copy
+    cout << "Boxes: " << record.boxCount << endl;
 }
 
 /*

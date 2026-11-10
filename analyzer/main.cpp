@@ -5,14 +5,14 @@
  * Description: Stores up to 100 observations in an array of structs, reads one
  *              to three validated records, and runs the prototype menu that
  *              displays only the occupied slots.
- * Due Date: [Date]
+ * Due Date: November 1, 2026
  */
 
-#include <iostream> // Provides console input and output
-#include <iomanip> // Provides table formatting
-#include <limits> // Supports discarding invalid numeric input
-#include "observation.h" // Provides the record type and initial member values
-#include "display.h" // Provides the single-observation display prototype
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include "observation.h"
+#include "display.h"
 using namespace std;
 
 int main() {
@@ -25,7 +25,7 @@ int main() {
     cout << "How many observations will you enter (1-3)? ";
     while (!(cin >> requestedObservations) || requestedObservations < 1 || requestedObservations > 3) {
         cin.clear(); // Recovers the stream after a failed extraction
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discards the rest of the invalid line
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Enter a whole number from 1 to 3: ";
     }
 
@@ -77,7 +77,7 @@ int main() {
         observations[index].isEmpty = false; // Marks the slot occupied only after all fields are complete
     }
 
-    do { // Repeats the prototype menu without repeating the initial data entry
+    do {
         cout << "\nCoRe Data Analyzer - Lab 11 prototype\n";
         cout << "1. Display Data Frame\n11. Exit application\n";
         cout << "Enter option number: ";
@@ -116,10 +116,10 @@ int main() {
                 break;
             }
             case 11:
-                cout << "Session ended." << endl; // Confirms the selected exit action
+                cout << "Session ended." << endl;
                 break;
             default:
-                cout << "Invalid option." << endl; // Handles a numeric option outside the prototype menu
+                cout << "Invalid option." << endl;
                 break;
         }
     } while (menuChoice != 11);
